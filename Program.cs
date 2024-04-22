@@ -6,6 +6,8 @@
         {
             //Creazione Utenti
 
+
+
             Utente JohnTravolta = new Utente("Travolta", "John", "john.travolta@example.com", "password123", "3912356789");
             Utente MarioRossi = new Utente("Rossi", "Mario", "mario.rossi@example.com", "password123", "3912356789");
             Utente LauraBianchi = new Utente("Bianchi", "Laura", "laura.bianchi@example.com", "qwerty456", "39987654321");
@@ -41,6 +43,10 @@
             Dvd schindlersList = new Dvd(505004632, "Schindler's List", "1993", "Drammatico", "D3", "Steven Spielberg", 195);
             Dvd theShawshankRedemption = new Dvd(732191869, "The Shawshank Redemption", "1994", "Drammatico", "A5", "Frank Darabont", 142);
 
+            Console.WriteLine("Esempi di utilizzo:");
+            Console.WriteLine("Utente: " + JohnTravolta.Nome);
+            Console.WriteLine("Libro: " + ilNomeDelVento.Titolo);
+            Console.WriteLine("DVD: " + titanic.Titolo);
 
         }
     }
