@@ -28,11 +28,17 @@ namespace csharp_biblioteca
 
         }
 
-        // Metodo per aggiungere un utente alla lista degli utenti
-        public void AggiungiUtente(Utente utente)
+        public void AggiungiDocumento(Documenti d)
         {
-            Utenti.Add(utente);
+            if (ArchivioDocumenti.ContainsKey(d.ISBN) == false) // O(log(n))
+                ArchivioDocumenti.Add(d.ISBN, d);
         }
+
+        // Metodo per aggiungere un utente alla lista degli utenti
+        //public void AggiungiUtente(Utente utente)
+        //{
+        //    Utenti.Add(utente);
+        //}
 
     }
 
