@@ -12,25 +12,16 @@ namespace csharp_biblioteca
 
     public class Biblioteca
     {
-        public DateTime InizioPrestito;
-        public DateTime FinePrestito;
-        public Utente Beneficiario;
-        public Documenti Prestato;
+
 
         // Liste per gli utenti, i libri e i DVD
         public List<Utente> Utenti { get; } = new List<Utente>();
         public List<Libro> Libri { get; } = new List<Libro>();
         public List<Dvd> Dvd { get; } = new List<Dvd>();
 
-        public Biblioteca(DateTime inizioPrestito, DateTime finePrestito, Utente beneficiario, Documenti prestato, List<Utente> utenti, List<Libro> libri, List<Dvd> dvd)
+        public Biblioteca()
         {
-            InizioPrestito = inizioPrestito;
-            FinePrestito = finePrestito;
-            Beneficiario = beneficiario;
-            Prestato = prestato;
-            Utenti = utenti;
-            Libri = libri;
-            Dvd = dvd;
+
         }
 
         // Metodo per aggiungere un utente alla lista degli utenti
@@ -39,6 +30,33 @@ namespace csharp_biblioteca
             Utenti.Add(utente);
         }
 
+    }
+
+    public class Prestito
+    
+        //public DateTime InizioPrestito;
+        //public DateTime FinePrestito;
+        //public Utente Beneficiario;
+        //public Documenti Prestato;
+    
+    {
+        public string IdDocumentoPresoInPrestito { get; set; }
+        public Utente UtenteBeneficiario { get; set; }
+        public DateTime PrestitoInizio { get; set; }
+        public DateTime PrestitoFine { get; set; }
+
+        public Prestito(string idDocumentoPresoInPrestito, Utente u, DateTime prestitoInizio, DateTime prestitoFine)
+        {
+            IdDocumentoPresoInPrestito = idDocumentoPresoInPrestito;
+            UtenteBeneficiario = new Utente(u.Nome, u.Cognome, u.Email, u.Password, u.RecapitoTelefonico);
+            PrestitoInizio = prestitoInizio;
+            PrestitoFine = prestitoFine;
+        }
+
+        public override string ToString()
+        {
+            return $"Codice doc {IdDocumentoPresoInPrestito}> Utente {UtenteBeneficiario?.ToString()} -- Da {PrestitoInizio} a {PrestitoFine}";
+        }
     }
 
     public class Utente
