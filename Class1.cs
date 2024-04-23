@@ -13,11 +13,15 @@ namespace csharp_biblioteca
     public class Biblioteca
     {
 
+        //Creazione del dizionario per i documenti: contiene sia dvd che Libri
+        public Dictionary<string, Documenti> ArchivioDocumenti { get; set; } = new();
 
-        // Liste per gli utenti, i libri e i DVD
-        public List<Utente> Utenti { get; } = new List<Utente>();
-        public List<Libro> Libri { get; } = new List<Libro>();
-        public List<Dvd> Dvd { get; } = new List<Dvd>();
+        //Creo una lista di Utenti 
+        public List<Utente> ListaUtenti { get; set; } = new();
+
+        //Creo una lista di Prestiti 
+        public List<Prestito> ListaPrestiti {  get; set; } = new();
+
 
         public Biblioteca()
         {
